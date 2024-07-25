@@ -1,5 +1,4 @@
 import axios from "axios";
-
 const API_KEY = 'f86391c3f009f56fa70b18132a4accbe';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
@@ -7,7 +6,6 @@ const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 export const fetchWeather = (city) => async (dispatch) => {
     try {
       dispatch({ type: 'FETCH_WEATHER_REQUEST' });
-      console.log(`${BASE_URL}/forecast?appid=${API_KEY}&q=${city}&units=metric&cnt=1`)
       const response =await axios.get(`${BASE_URL}/forecast?appid=${API_KEY}&q=${city}&units=metric&cnt=30`)
        dispatch({ type: 'FETCH_WEATHER_SUCCESS', payload: response.data.list });
     } catch (error) {

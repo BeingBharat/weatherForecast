@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View,FlatList } from 'react-native';
 import moment from 'moment';
-import { fetchWeatherForecast } from './services';
 import { fetchWeather } from './redux/weatherAction';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -10,7 +9,7 @@ export default function Home() {
   const dispatch = useDispatch();
   const { forecast, loading, error } = useSelector(state => state.weather);
   useEffect(() => {
-    dispatch(fetchWeather('gurugram'));
+    dispatch(fetchWeather(city));
   }, [dispatch]);
 
   if (loading) {

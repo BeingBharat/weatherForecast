@@ -7,7 +7,6 @@ import Home from './screen';
 export default function App() {
   return (
     <Provider store={store}>
-        {/* <HomeS /> */}
         <Home />
     </Provider>
   );

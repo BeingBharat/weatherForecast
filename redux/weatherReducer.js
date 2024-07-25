@@ -1,4 +1,3 @@
-// reducers/weatherReducer.js
 const initialState = {
     forecast: [],
     loading: false,
